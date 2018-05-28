@@ -5,7 +5,7 @@ const app = express();
 
 app.post('/sendMessage', (req, res) => {
   const bot = new telegraf.Telegram(process.env.BOT_ID);
-  console.log(req.body);
+  console.log(req);
   bot.sendMessage(process.env.CHAT_ID, 'test');
   res.send('ok');
 });
