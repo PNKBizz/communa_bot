@@ -7,7 +7,7 @@ app.use(express.json());
 app.post('/sendMessage', (req, res) => {
   const bot = new telegraf.Telegram(process.env.BOT_ID);
   const { text } = req.body;
-  bot.sendMessage(process.env.CHAT_ID, text);
+  bot.sendMessage(process.env.CHAT_ID, text, { parse_mode: "Markdown" });
   res.send('ok');
 });
 
